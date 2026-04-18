@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7B13t Anarchy Server | No Rules. No Mercy.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #a0a0a0;
+            --accent-red: #8B0000;
+            --accent-yellow: #FFFF00;
+            --glow-red: 0 0 10px #8B0000, 0 0 20px #8B0000;
+            --glow-yellow: 0 0 10px #FFFF00, 0 0 20px #FFFF00;
+            --font-pixel: 'Press Start 2P', cursive;
+        }
+
+        /* --- 超帥像素劍游標 --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-pixel);
+            cursor: url('http://cur.cursors-4u.net/games/gam-3/gam204.cur'), auto;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: linear-gradient(to bottom, rgba(139, 0, 0, 0.1), rgba(0, 0, 0, 1));
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        /* --- Glitch 動畫 --- */
+        .glitch {
+            position: relative;
+            color: white;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: black;
+        }
+        .glitch::before { left: 2px; text-shadow: -2px 0 #ff00c1; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim 5s infinite linear alternate-reverse; }
+        .glitch::after { left: -2px; text-shadow: -2px 0 #00fff9; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim2 5s infinite linear alternate-reverse; }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 20px, 0); }
+            100% { clip: rect(80px, 9999px, 90px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(30px, 9999px, 40px, 0); }
+            100% { clip: rect(10px, 9999px, 50px, 0); }
+        }
+
+        /* --- 主視角區 --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-logo {
+            max-width: 350px;
+            width: 90%;
+            margin-bottom: 20px;
+            image-rendering: pixelated;
+            filter: drop-shadow(0 0 15px rgba(255, 69, 0, 0.6));
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background: transparent;
+            color: var(--accent-yellow);
+            border: 3px solid var(--accent-red);
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: var(--glow-red);
+        }
+
+        .btn:hover {
+            background: var(--accent-red);
+            color: white;
+            box-shadow: var(--glow-yellow);
+            transform: translateY(-5px);
+        }
+
+        /* --- 區塊樣式 --- */
+        section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px 20px;
+            border: 1px solid #222;
+            background: rgba(10, 10, 10, 0.9);
+        }
+
+        h2 { color: var(--accent-red); margin-bottom: 20px; text-align: center; }
+
+        .info-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            color: var(--accent-yellow);
+        }
+
+        footer { text-align: center; padding: 50px; color: #444; font-size: 10px; }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<section id="hero">
+    <img src="https://scontent.ftpe7-4.fna.fbcdn.net/v/t1.15752-9/663925026_821442711026278_9137248347622675282_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=BEc1z8PsRFwQ7kNvwEjAAei&_nc_oc=AdrK6EvVpY_B5GKZhfdzPffLegogNjOYwk56u7Fo2cnBPKRRPP8j_pestsoSi7Pc_sg&_nc_zt=23&_nc_ht=scontent.ftpe7-4.fna&_nc_ss=7a2a8&oh=03_Q7cD5AG3KpVN_A_I8Yoga6KK4KWdtpIka2Z6HCJ6FO2xcOP17w&oe=6A0A2B60" alt="7B13t Logo" class="hero-logo">
+    
+    <h1 class="glitch" data-text="7B13t Anarchy">7B13t Anarchy</h1>
+    <p style="color: #8B0000; margin: 15px 0;">No Rules. No Mercy.</p>
+    
+    <div>
+        <a href="minecraft://yanking-clear.gl.joinmc.link" class="btn">Join Server</a>
+        <a href="https://discord.gg/B56mbAgNZg" target="_blank" class="btn" style="border-color: #5865F2; color: #5865F2;">Discord</a>
+    </div>
+</section>
+
+<section>
+    <h2>SERVER STATUS</h2>
+    <div class="info-box">
+        <div>IP:</div> <div style="font-size: 12px;">yanking-clear.gl.joinmc.link</div>
+        <div>Version:</div> <div>1.21.x</div>
+        <div>Online:</div> <div id="players">---</div>
+    </div>
+</section>
+
+<section>
+    <h2>RULES</h2>
+    <ul style="list-style: none; color: #ccc;">
+        <li>☠️ No cheating restrictions.</li>
+        <li>🔥 Everything is allowed.</li>
+        <li>🚫 Don't crash the server.</li>
+    </ul>
+</section>
+
+<footer>
+    &copy; 2026 7B13t ANARCHY SERVER. NOT AN OFFICIAL MINECRAFT PRODUCT.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    // 粒子背景配置
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 50 },
+            "color": { "value": "#8B0000" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 3 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#8B0000", "opacity": 0.4, "width": 1 },
+            "move": { "enable": true, "speed": 2 }
+        }
+    });
+
+    // 假玩家計數器
+    setInterval(() => {
+        document.getElementById('players').innerText = Math.floor(Math.random() * 50) + 120 + " Players";
+    }, 3000);
+</script>
+
+</body>
+</html>
